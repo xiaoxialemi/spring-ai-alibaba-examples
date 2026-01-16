@@ -1,19 +1,19 @@
 server:
-  port: 21000
+  port: 21001
 
 spring:
   main:
     banner-mode: off
   application:
-    name: mcp-nacos-register-extensions-example
+    name: mcp-nacos-register-extensions-sse-example
   ai:
     mcp:
       server:
-        name: webflux-mcp-server
+        name: webflux-sse-mcp-server
         version: 1.0.0
         type: ASYNC  # Recommended for reactive applications
         instructions: "This reactive server provides time information tools and resources"
-        protocol: STREAMABLE
+        protocol: sse
         request-timeout: 20s
         streamable-http:
           mcp-endpoint: /mcp
@@ -30,4 +30,4 @@ spring:
           register:
             enabled: true
             service-group: mcp-server       ## 指定分组名称
-            service-name: webflux-mcp-server ## 指定服务名称
+            service-name: webflux-sse-mcp-server ## 指定服务名称

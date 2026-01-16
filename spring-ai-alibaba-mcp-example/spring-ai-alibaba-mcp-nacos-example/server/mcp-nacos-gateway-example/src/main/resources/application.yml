@@ -20,7 +20,7 @@ spring:
           prompt: false
           completion: false
     dashscope:
-      api-key: ${DASHSCOPE_API_KEY}
+      api-key: sk-51f53a871d434863880761b4d96b913c
 
     alibaba:
       # MCP Gateway 配置
@@ -31,14 +31,17 @@ spring:
           # 配置要发现和聚合的 MCP Server 服务名称
           nacos:
             serviceNames:
-              - nacos-mcp-server-sse         # SSE 协议的 MCP Server
-              - nacos-mcp-server-streamable  # Streamable 协议的 MCP Server
+              - webflux-sse-mcp-server         # SSE 协议的 MCP Server
+              - webflux-mcp-server  # Streamable 协议的 MCP Server
+#              - feedback-mcp-server
         # Nacos 注册中心配置
         nacos:
-          server-addr: localhost:8848
-          namespace: public
+          server-addr: 172.22.26.59:8848,172.22.26.59:8858,172.22.26.59:8868
+          namespace: example_test
           username: nacos
           password: nacos
+          register:
+            enabled: true
 
 logging:
   level:
