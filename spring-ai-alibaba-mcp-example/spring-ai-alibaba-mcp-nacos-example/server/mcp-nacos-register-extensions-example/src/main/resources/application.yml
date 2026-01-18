@@ -24,10 +24,12 @@ spring:
       mcp:
         nacos:
           namespace: example_test
-          server-addr: 172.22.26.59:8848,172.22.26.59:8858,172.22.26.59:8868
+          server-addr: 127.0.0.1:8848
           username: nacos
           password: nacos
           register:
             enabled: true
             service-group: mcp-server       ## 指定分组名称
             service-name: webflux-mcp-server ## 指定服务名称
+            metadata:
+              protocol: streamable

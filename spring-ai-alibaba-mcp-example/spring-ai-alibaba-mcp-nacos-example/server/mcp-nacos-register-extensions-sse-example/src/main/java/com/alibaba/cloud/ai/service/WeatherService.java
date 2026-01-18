@@ -21,9 +21,9 @@ public class WeatherService {
     private static final Logger logger = LoggerFactory.getLogger(WeatherService.class);
 
     @Tool(description = "Get the weather of a specified city.")
-    public String  getCityTimeMethod(@ToolParam(description = "Time zone id, such as Asia/Shanghai") String city) {
-        logger.info("The current weather is {}", city);
-        return String.format("The current time zone is %s and the current time is " + "%s", city,
+    public String  getWeatherMethod(@ToolParam(description = "The City Name, such as Shanghai") String city) {
+        logger.info("The Today weather is {}", city);
+        return String.format("The City 's weather is %s " + "%s", city,
                 "天气晴");
     }
 

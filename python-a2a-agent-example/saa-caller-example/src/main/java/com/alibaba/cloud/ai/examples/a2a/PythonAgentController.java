@@ -37,11 +37,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class PythonAgentController {
 
-	private final PythonAgentCaller pythonAgentCaller;
+//	private final PythonAgentCaller pythonAgentCaller;
+    private final JavaAgentCaller pythonAgentCaller;
 
-	public PythonAgentController(PythonAgentCaller pythonAgentCaller) {
-		this.pythonAgentCaller = pythonAgentCaller;
-	}
+//	public PythonAgentController(PythonAgentCaller pythonAgentCaller) {
+//		this.pythonAgentCaller = pythonAgentCaller;
+//	}
+
+    public PythonAgentController(JavaAgentCaller pythonAgentCaller) {
+        this.pythonAgentCaller = pythonAgentCaller;
+    }
 
 	/**
 	 * Translate text using Python agent (GET).

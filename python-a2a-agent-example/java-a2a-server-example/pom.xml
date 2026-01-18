@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.alibaba.cloud.ai.examples</groupId>
-    <artifactId>saa-call-python-a2a-agent</artifactId>
+    <artifactId>java-a2a-server-example</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>SAA Call Python A2A Agent Example</name>
-    <description>Example showing how to call Python A2A agents from Spring AI Alibaba</description>
+    <name>Java A2A Server Example</name>
+    <description>Simple Java A2A Server for testing A2A calls</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -19,20 +19,35 @@
 
     <properties>
         <java.version>17</java.version>
+        <spring-ai-alibaba.version>1.1.2.0</spring-ai-alibaba.version>
     </properties>
 
     <dependencies>
-        <!-- Spring Boot Web -->
+        <!-- Spring Boot Starter -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
-        <!-- Spring AI Alibaba A2A with Nacos (includes core dependencies) -->
+        <!-- Spring AI Alibaba A2A with Nacos -->
         <dependency>
             <groupId>com.alibaba.cloud.ai</groupId>
             <artifactId>spring-ai-alibaba-starter-a2a-nacos</artifactId>
-            <version>1.1.2.0</version>
+            <version>${spring-ai-alibaba.version}</version>
+        </dependency>
+
+        <!-- Spring AI Alibaba Graph Core -->
+        <dependency>
+            <groupId>com.alibaba.cloud.ai</groupId>
+            <artifactId>spring-ai-alibaba-graph-core</artifactId>
+            <version>${spring-ai-alibaba.version}</version>
+        </dependency>
+
+        <!-- DashScope for LLM -->
+        <dependency>
+            <groupId>com.alibaba.cloud.ai</groupId>
+            <artifactId>spring-ai-alibaba-starter-dashscope</artifactId>
+            <version>${spring-ai-alibaba.version}</version>
         </dependency>
 
         <!-- Test -->
@@ -56,6 +71,14 @@
             <id>aliyun</id>
             <name>Aliyun Maven</name>
             <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+        <repository>
+            <id>ossrh-snapshots</id>
+            <name>OSS Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </repositories>
 

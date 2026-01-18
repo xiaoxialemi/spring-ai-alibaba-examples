@@ -6,6 +6,7 @@ import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.tool.ToolCallback;
 import org.springframework.ai.tool.ToolCallbackProvider;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,7 +36,7 @@ public class GatewayController {
     private final ToolCallbackProvider toolCallbackProvider;
     private final static Logger log = LoggerFactory.getLogger(GatewayController.class);
 
-    public GatewayController(ChatModel chatModel, ToolCallbackProvider toolCallbackProvider) {
+    public GatewayController(ChatModel chatModel, @Qualifier("callbackProvider")ToolCallbackProvider toolCallbackProvider) {
         this.chatModel = chatModel;
         this.toolCallbackProvider = toolCallbackProvider;
     }

@@ -25,9 +25,14 @@ spring:
                 server1:
                   service-name: webflux-mcp-server
                   version: 1.0.0
+            sse:
+              connections:
+                server1:
+                  service-name: webflux-sse-mcp-server
+                  version: 1.0.0
             configs:
               server1:
-                namespace: 0908ca08-c382-404c-9d96-37fe1628b183
-                server-addr: 127.0.0.1:8848
+                namespace: example_test
+                serverAddr: 127.0.0.1:8848
                 username: nacos
                 password: nacos

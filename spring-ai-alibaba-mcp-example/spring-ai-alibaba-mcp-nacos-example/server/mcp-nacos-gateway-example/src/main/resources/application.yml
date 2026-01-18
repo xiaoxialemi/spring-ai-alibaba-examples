@@ -20,7 +20,7 @@ spring:
           prompt: false
           completion: false
     dashscope:
-      api-key: sk-51f53a871d434863880761b4d96b913c
+      api-key: ${AI_DASHSCOPE_API_KEY}
 
     alibaba:
       # MCP Gateway 配置
@@ -36,7 +36,7 @@ spring:
 #              - feedback-mcp-server
         # Nacos 注册中心配置
         nacos:
-          server-addr: 172.22.26.59:8848,172.22.26.59:8858,172.22.26.59:8868
+          server-addr: 127.0.0.1:8848
           namespace: example_test
           username: nacos
           password: nacos

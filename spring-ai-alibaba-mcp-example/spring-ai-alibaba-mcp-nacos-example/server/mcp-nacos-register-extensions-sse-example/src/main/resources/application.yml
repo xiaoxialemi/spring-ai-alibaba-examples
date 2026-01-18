@@ -24,7 +24,7 @@ spring:
       mcp:
         nacos:
           namespace: example_test
-          server-addr: 172.22.26.59:8848,172.22.26.59:8858,172.22.26.59:8868
+          server-addr: 127.0.0.1:8848
           username: nacos
           password: nacos
           register:

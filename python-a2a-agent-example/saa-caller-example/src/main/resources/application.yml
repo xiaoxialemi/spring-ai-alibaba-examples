@@ -2,7 +2,7 @@
 # This configuration enables Nacos discovery to find Python agents
 
 server:
-  port: 8080
+  port: 8099
 
 spring:
   application:
@@ -12,7 +12,7 @@ spring:
     alibaba:
       # DashScope configuration (for local agent if needed)
       dashscope:
-        api-key: ${DASHSCOPE_API_KEY:}
+        api-key: ${AI_DASHSCOPE_API_KEY:}
 
       # A2A configuration
       a2a:
@@ -35,6 +35,11 @@ spring:
 python:
   agent:
     name: python-translator-agent
+
+java:
+  agent:
+    name: JavaEchoAgent
+
 
 logging:
   level:

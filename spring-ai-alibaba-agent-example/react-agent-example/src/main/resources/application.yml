@@ -1,4 +1,9 @@
+server:
+  port: 7744
+
 spring:
   ai:
     dashscope:
       api-key: ${AI_DASHSCOPE_API_KEY}
+
+
